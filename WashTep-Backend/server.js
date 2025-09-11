@@ -1,7 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const cors = require('cors'); // <-- This line was missing
-dotenv.config(); // Ensure this is at the top
+const cors = require('cors'); 
+dotenv.config(); 
 
 const connectDB = require('./config/db');
 const orderRoutes = require('./routes/orderRoutes');
@@ -13,13 +13,13 @@ app.use(express.json());
 app.use(cors({
   origin: [
     "http://localhost:5173",   // for local dev
-    "https://your-frontend.vercel.app", // vercel
+    "https://washtep-web-app.vercel.app", // vercel
     "https://yourdomain.com"   // custom domain
   ],
   credentials: true
 }));
 
-// --- API Routes ---
+// API Routes
 app.use('/api/orders', orderRoutes);
 app.use('/api/users', userRoutes);
 
