@@ -58,9 +58,6 @@ const CheckoutPage = ({ selectedService, onBack, onSuccess }) => {
       const result = await response.json();
 
       if (result.success) {
-        // --- THIS IS THE KEY CHANGE ---
-        // Instead of alerting and going back, we now call the new 'onSuccess' function
-        // and pass it the details needed for the confirmation page.
         onSuccess({
           orderId: result.order._id.slice(-6).toUpperCase(),
           fullName: result.order.fullName,
@@ -78,7 +75,7 @@ const CheckoutPage = ({ selectedService, onBack, onSuccess }) => {
     }
   };
 
-  // The entire return statement (your form's JSX) remains exactly as you wrote it.
+  
   return (
     <div className="checkout-container">
       <button className="back-button" onClick={onBack}>
@@ -103,7 +100,7 @@ const CheckoutPage = ({ selectedService, onBack, onSuccess }) => {
               name="fullName"
               value={formData.fullName}
               onChange={handleChange}
-              placeholder="John Doe"
+              placeholder="Your Name"
               required
             />
           </div>
@@ -132,7 +129,7 @@ const CheckoutPage = ({ selectedService, onBack, onSuccess }) => {
               name="address"
               value={formData.address}
               onChange={handleChange}
-              placeholder="e.g., 123 Main St, Apt 4B"
+              placeholder="C/26 KingWin Chemicals"
               required
             />
           </div>
@@ -145,7 +142,7 @@ const CheckoutPage = ({ selectedService, onBack, onSuccess }) => {
                 name="city"
                 value={formData.city}
                 onChange={handleChange}
-                placeholder="e.g., Anytown"
+                placeholder="Only Jaipur Currently"
                 required
               />
             </div>
@@ -157,7 +154,7 @@ const CheckoutPage = ({ selectedService, onBack, onSuccess }) => {
                 name="pincode"
                 value={formData.pincode}
                 onChange={handleChange}
-                placeholder="e.g., 123456"
+                placeholder="302017"
                 required
                 pattern="[0-9]{6}"
               />
