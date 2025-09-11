@@ -1,0 +1,14 @@
+.confirmation-container { max-width: 600px; margin: 2rem auto; background-color: var(--card-bg); padding: 3rem; border-radius: var(--border-radius); box-shadow: var(--card-shadow); text-align: center; border: 1px solid var(--border-color); }
+.confirmation-title { font-size: 2.2rem; color: var(--success-color); margin-bottom: 0.5rem; }
+.confirmation-subtitle { font-size: 1.1rem; color: var(--text-color-secondary); margin-bottom: 2rem; }
+.order-summary { background-color: var(--secondary-bg); border: 1px dashed var(--border-color); border-radius: var(--border-radius); padding: 1.5rem; margin-bottom: 2rem; text-align: left; }
+.order-summary p { margin-bottom: 0.75rem; color: var(--text-color); }
+.go-home-button { padding: 0.8rem 2rem; font-size: 1rem; font-weight: 500; color: #fff; background-color: var(--primary-color); border: none; border-radius: var(--border-radius); cursor: pointer; transition: background-color 0.2s ease; }
+.go-home-button:hover { background-color: var(--primary-hover); }
+.success-icon { width: 80px; height: 80px; border-radius: 50%; display: block; stroke-width: 2; stroke: #fff; margin: 0 auto 1.5rem auto; box-shadow: inset 0px 0px 0px var(--success-color); animation: fill .4s ease-in-out .4s forwards, scale .3s ease-in-out .9s both; }
+.success-icon__circle { stroke-dasharray: 166; stroke-dashoffset: 166; stroke: var(--success-color); fill: none; animation: stroke .6s cubic-bezier(0.65, 0, 0.45, 1) forwards; }
+.success-icon__check { transform-origin: 50% 50%; stroke-dasharray: 48; stroke-dashoffset: 48; animation: stroke .3s cubic-bezier(0.65, 0, 0.45, 1) .8s forwards; }
+@keyframes stroke { 100% { stroke-dashoffset: 0; } }
+@keyframes scale { 0%, 100% { transform: none; } 50% { transform: scale3d(1.1, 1.1, 1); } }
+@keyframes fill { 100% { box-shadow: inset 0px 0px 0px 40px var(--success-color); } }
+

@@ -1,0 +1,73 @@
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 4rem 1rem;
+  min-height: 70vh;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+  text-align: center;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.auth-card h2 {
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+  color: var(--text-color);
+}
+
+.auth-button {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.auth-button:hover {
+  background-color: var(--primary-hover);
+}
+
+.auth-button:disabled {
+  background-color: var(--primary-color);
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.switch-mode-button {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  cursor: pointer;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.switch-mode-button:hover {
+  text-decoration: underline;
+}
+
+.error-text {
+  color: var(--danger-color);
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  background-color: rgba(220, 53, 69, 0.1); /* This semi-transparent color works well in both themes */
+  padding: 0.5rem;
+  border-radius: var(--border-radius);
+}
+

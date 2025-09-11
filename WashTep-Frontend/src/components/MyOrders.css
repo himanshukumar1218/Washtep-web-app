@@ -1,0 +1,237 @@
+/* Main container for the My Orders page */
+.my-orders-container {
+    max-width: 1200px; /* Equivalent to container */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem; /* p-4 */
+}
+
+/* Responsive padding for medium screens and up */
+@media (min-width: 768px) {
+    .my-orders-container {
+        padding: 2rem; /* md:p-8 */
+    }
+}
+
+/* Page title: "My Orders" */
+.my-orders-title {
+    font-size: 1.875rem; /* text-3xl */
+    font-weight: 700; /* font-bold */
+    color: #1f2937; /* text-gray-800 */
+    margin-bottom: 1.5rem; /* mb-6 */
+}
+
+/* Dark mode styles for the title */
+[data-theme='dark'] .my-orders-title {
+    color: #f9fafb; /* dark:text-white */
+}
+
+/* Container for all the order cards */
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* space-y-6 */
+}
+
+/* Individual order card */
+.order-card {
+    background-color: #ffffff; /* bg-white */
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /* shadow-lg */
+    padding: 1.5rem; /* p-6 */
+    transition: box-shadow 0.3s ease;
+}
+.order-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1); /* hover:shadow-xl */
+}
+
+/* Dark mode for order card */
+[data-theme='dark'] .order-card {
+    background-color: #1f2937; /* dark:bg-gray-800 */
+}
+
+/* Header section within the card (ID, Date, Total) */
+.order-card-header {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #e5e7eb; /* border-b */
+    padding-bottom: 1rem; /* pb-4 */
+    margin-bottom: 1rem; /* mb-4 */
+}
+[data-theme='dark'] .order-card-header {
+    border-color: #374151; /* dark:border-gray-700 */
+}
+@media (min-width: 768px) {
+    .order-card-header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .order-card-header > div {
+        margin-top: 0;
+        text-align: right;
+    }
+     .order-card-header > div:first-child {
+        text-align: left;
+    }
+}
+
+/* Info blocks within the card header */
+.info-block {
+    margin-top: 1rem;
+}
+.info-block-label {
+    font-size: 0.875rem; /* text-sm */
+    color: #6b7280; /* text-gray-500 */
+}
+[data-theme='dark'] .info-block-label {
+    color: #9ca3af; /* dark:text-gray-400 */
+}
+.info-block-value {
+    font-family: monospace; /* font-mono */
+    color: #1f2937; /* text-gray-800 */
+}
+[data-theme='dark'] .info-block-value {
+    color: #f9fafb; /* dark:text-gray-100 */
+}
+.info-block-value.semibold {
+    font-weight: 600; /* font-semibold */
+}
+.info-block-value.total {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 700; /* font-bold */
+    color: #2563eb; /* text-blue-600 */
+}
+
+
+/* "Order Status" heading */
+.order-status-heading {
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600; /* font-semibold */
+    color: #374151; /* text-gray-700 */
+    margin-bottom: 0.5rem; /* mb-2 */
+}
+[data-theme='dark'] .order-status-heading {
+    color: #d1d5db; /* dark:text-gray-200 */
+}
+.order-status-value {
+    color: #3b82f6; /* text-blue-500 */
+}
+
+
+/* --- Status Tracker --- */
+.status-tracker {
+    width: 100%;
+    margin-top: 1rem; /* my-4 */
+    margin-bottom: 1rem;
+}
+.status-tracker-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.status-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.status-icon-wrapper {
+    width: 2rem; /* w-8 */
+    height: 2rem; /* h-8 */
+    border-radius: 9999px; /* rounded-full */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.status-icon-wrapper.completed {
+    background-color: #3b82f6; /* bg-blue-500 */
+    color: #ffffff; /* text-white */
+}
+.status-icon-wrapper.pending {
+    background-color: #e5e7eb; /* bg-gray-200 */
+    color: #6b7280; /* text-gray-500 */
+}
+[data-theme='dark'] .status-icon-wrapper.pending {
+    background-color: #4b5563; /* dark:bg-gray-600 */
+}
+.status-icon {
+    width: 1.25rem; /* w-5 */
+    height: 1.25rem; /* h-5 */
+}
+.status-label {
+    margin-top: 0.5rem; /* mt-2 */
+    font-size: 0.75rem; /* text-xs */
+}
+.status-label.completed {
+    font-weight: 600; /* font-semibold */
+    color: #1f2937; /* text-gray-800 */
+}
+[data-theme='dark'] .status-label.completed {
+    color: #f9fafb; /* dark:text-gray-100 */
+}
+.status-label.pending {
+    color: #6b7280; /* text-gray-500 */
+}
+[data-theme='dark'] .status-label.pending {
+    color: #9ca3af; /* dark:text-gray-400 */
+}
+.status-connector {
+    flex-grow: 1; /* flex-1 */
+    height: 0.25rem; /* h-1 */
+    margin-left: 0.5rem; /* mx-2 */
+    margin-right: 0.5rem;
+}
+.status-connector.completed {
+    background-color: #3b82f6; /* bg-blue-500 */
+}
+.status-connector.pending {
+    background-color: #e5e7eb; /* bg-gray-200 */
+}
+[data-theme='dark'] .status-connector.pending {
+    background-color: #4b5563; /* dark:bg-gray-600 */
+}
+
+/* --- "No Orders" Message --- */
+.no-orders-card {
+    text-align: center;
+    padding: 2.5rem; /* p-10 */
+    background-color: #ffffff; /* bg-white */
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1); /* shadow-md */
+    max-width: 32rem; /* max-w-lg */
+    margin: 2.5rem auto 0 auto; /* mt-10 mx-auto */
+}
+[data-theme='dark'] .no-orders-card {
+    background-color: #1f2937; /* dark:bg-gray-800 */
+}
+
+.no-orders-title {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 700; /* font-bold */
+    color: #1f2937; /* text-gray-800 */
+    margin-bottom: 1rem; /* mb-4 */
+}
+[data-theme='dark'] .no-orders-title {
+    color: #ffffff; /* dark:text-white */
+}
+
+.no-orders-text {
+    color: #4b5563; /* text-gray-600 */
+    margin-bottom: 1.5rem; /* mb-6 */
+}
+[data-theme='dark'] .no-orders-text {
+    color: #d1d5db; /* dark:text-gray-300 */
+}
+
+.no-orders-button {
+    background-color: #3b82f6; /* bg-blue-500 */
+    color: #ffffff; /* text-white */
+    font-weight: 700; /* font-bold */
+    padding: 0.5rem 1.5rem; /* py-2 px-6 */
+    border-radius: 0.5rem; /* rounded-lg */
+    transition: background-color 0.3s ease;
+}
+.no-orders-button:hover {
+    background-color: #2563eb; /* hover:bg-blue-600 */
+}

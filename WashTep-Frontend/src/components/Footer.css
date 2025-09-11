@@ -1,0 +1,67 @@
+/* --- Footer Styles --- */
+.site-footer { 
+  background-color: #212529;
+  color: #f8f9fa; 
+  padding: 3rem 1.5rem; 
+  margin-top: auto; 
+}
+
+.footer-content { 
+  max-width: 1200px; 
+  margin: 0 auto; 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2.5rem;
+}
+
+.footer-section h4 { 
+  font-size: 1.2rem; 
+  margin-bottom: 1rem; 
+  color: #fff; 
+  border-bottom: 2px solid var(--primary-color); 
+  padding-bottom: 0.5rem; 
+  display: inline-block; 
+}
+
+.footer-section p, 
+.footer-section a { 
+  color: #adb5bd; 
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-decoration: none; 
+  transition: color 0.3s ease; 
+  display: block;
+  margin-bottom: 0.75rem;
+}
+
+.footer-section a:hover { 
+  color: #fff; 
+  text-decoration: underline; 
+}
+
+/* social icons layout */
+.social-links { 
+  display: flex; 
+  gap: 1rem; 
+  align-items: center;
+}
+
+.social-links a { 
+  color: #adb5bd;
+  font-size: 1.4rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-links a:hover { 
+  color: #fff;
+  transform: scale(1.15);
+}
+
+.footer-bottom { 
+  text-align: center; 
+  margin-top: 2rem; 
+  padding-top: 1.5rem; 
+  border-top: 1px solid #343a40; 
+  font-size: 0.85rem; 
+  color: #6c757d; 
+}

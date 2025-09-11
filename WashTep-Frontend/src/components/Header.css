@@ -1,0 +1,110 @@
+.site-header {
+  background-color: #fff;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #dee2e6;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.header-container {
+  max-width: 1366px;
+  margin: auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+.logo { cursor: pointer; }
+.logo img { height: 50px; display: block; }
+.main-nav { display: flex; align-items: center; gap: 1.5rem; }
+.nav-button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+  color: #212529;
+}
+.login-button:hover { background-color: #f1f1f1; }
+.orders-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+}
+.orders-button:hover { background-color: #e2e6ea; }
+.orders-icon { width: 20px; height: 20px; }
+.profile-menu-container { position: relative; }
+.profile-icon {
+  width: 40px; height: 40px; border-radius: 50%;
+  background-color: #007BFF;
+  color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; font-weight: 700;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  cursor: pointer; text-transform: uppercase;
+}
+.profile-dropdown {
+  position: absolute; top: calc(100% + 10px); right: 0;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  border: 1px solid #dee2e6;
+  width: 240px;
+  z-index: 1100;
+  overflow: hidden;
+}
+.dropdown-header { padding: 1rem; border-bottom: 1px solid #dee2e6; background-color: #f8f9fa; }
+.dropdown-user-name { font-weight: 700; color: #212529; }
+.dropdown-user-email { font-size: 0.85rem; color: #6c757d; }
+.dropdown-item {
+  display: block; width: 100%; text-align: left;
+  padding: 0.75rem 1rem; background: none; border: none;
+  cursor: pointer; font-size: 0.95rem;
+  color: #dc3545;
+  font-weight: 500;
+}
+.dropdown-item:hover { background-color: #f1f1f1; }
+
+/* --- Dark Mode Overrides --- */
+html[data-theme='dark'] .site-header,
+html[data-theme='dark'] .profile-dropdown,
+html[data-theme='dark'] .dropdown-header {
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+  box-shadow: var(--card-shadow);
+}
+html[data-theme='dark'] .nav-button,
+html[data-theme='dark'] .dropdown-user-name {
+  color: var(--text-color);
+}
+html[data-theme='dark'] .login-button:hover,
+html[data-theme='dark'] .dropdown-item:hover {
+  background-color: var(--secondary-bg);
+}
+html[data-theme='dark'] .orders-button {
+  background-color: var(--secondary-bg);
+  border-color: var(--border-color);
+}
+html[data-theme='dark'] .orders-button:hover {
+  background-color: var(--border-color);
+}
+html[data-theme='dark'] .dropdown-user-email {
+  color: var(--text-color-secondary);
+}
+html[data-theme='dark'] .dropdown-item {
+  color: var(--danger-color);
+}
+html[data-theme='dark'] .profile-icon {
+  background-color: var(--primary-color);
+  border-color: var(--card-bg);
+}
+

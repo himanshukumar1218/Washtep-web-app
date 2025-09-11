@@ -1,0 +1,50 @@
+/* --- Global Styles & App Layout --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+/* --- THEME VARIABLES --- */
+:root {
+  /* Light Mode (Your Original Style) */
+  --primary-color: #007BFF;
+  --primary-hover: #0056b3;
+  --background-color: #f4f7f6;
+  --secondary-bg: #f8f9fa;
+  --card-bg: #ffffff;
+  --text-color: #212529;
+  --text-color-secondary: #6c757d;
+  --border-color: #dee2e6;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+}
+
+html[data-theme='dark'] {
+  /* Dark Mode */
+  --primary-color: #3693ff;
+  --primary-hover: #5fa5ff;
+  --background-color: #121212;
+  --secondary-bg: #1e1e1e;
+  --card-bg: #1e1e1e;
+  --text-color: #e0e0e0;
+  --text-color-secondary: #a0a0a0;
+  --border-color: #333333;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --success-color: #34c759;
+  --danger-color: #ff453a;
+}
+/* --- END THEME VARIABLES --- */
+
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { 
+  font-family: 'Inter', sans-serif; 
+  background-color: var(--background-color); 
+  color: var(--text-color); 
+  line-height: 1.6;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app-container { display: flex; flex-direction: column; min-height: 100vh; }
+.main-content { flex-grow: 1; width: 100%; max-width: 1366px; margin: 0 auto; padding: 2.5rem 1.5rem; }
+h1, h2, h3, h4 { font-weight: 700; line-height: 1.3; }
+
