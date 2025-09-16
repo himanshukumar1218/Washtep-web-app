@@ -13,9 +13,10 @@ const app = express();
 app.use(express.json());
 app.use(cors({
   origin: [
-    "http://localhost:5173",   // for local dev
-    "https://washtep-web-app.vercel.app", // vercel
-    "https://yourdomain.com"   // custom domain
+    "http://localhost:5173",             // For local development
+    "https://washtep-web-app.vercel.app",  // Your Vercel deployment URL
+    "https://washtep.tech",              // Your custom domain
+    "https://www.washtep.tech"           // The 'www' version of your domain
   ],
   credentials: true
 }));
