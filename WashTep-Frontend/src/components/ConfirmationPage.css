@@ -12,3 +12,17 @@
 @keyframes scale { 0%, 100% { transform: none; } 50% { transform: scale3d(1.1, 1.1, 1); } }
 @keyframes fill { 100% { box-shadow: inset 0px 0px 0px 40px var(--success-color); } }
 
+/* WashTep-Frontend/src/components/CheckoutPage.css */
+
+/* Your existing styles are good */
+
+@media (max-width: 600px) {
+  .form-row {
+    flex-direction: column; /* Stacks the form fields */
+    gap: 1.25rem;
+  }
+
+  .checkout-container {
+    padding: 1.5rem; /* Reduce padding */
+  }
+}

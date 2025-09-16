@@ -1,7 +1,7 @@
 const Order = require('../models/orderModel');
 const nodemailer = require('nodemailer');
 
-// --- Configure Email Transporter ---
+
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
@@ -10,11 +10,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-/**
- * @desc    Create a new order and send a notification email
- * @route   POST /api/orders
- * @access  Private
- */
+
 const createOrder = async (req, res) => {
   try {
     const { service, ...formData } = req.body;
@@ -40,7 +36,7 @@ const createOrder = async (req, res) => {
     const savedOrder = await newOrder.save();
     console.log('Order saved:', savedOrder);
 
-    // --- Send Notification Email ---
+    
     const mailOptions = {
       from: `"WashTep" <${process.env.EMAIL_USER}>`,
       to: process.env.EMAIL_USER,
@@ -82,11 +78,7 @@ const createOrder = async (req, res) => {
   }
 };
 
-/**
- * @desc    Get all orders (Admin only)
- * @route   GET /api/orders
- * @access  Private/Admin
- */
+
 const getAllOrders = async (req, res) => {
   try {
     const orders = await Order.find({})
@@ -100,11 +92,7 @@ const getAllOrders = async (req, res) => {
   }
 };
 
-/**
- * @desc    Update an order's status (Admin only)
- * @route   PUT /api/orders/:id
- * @access  Private/Admin
- */
+
 const updateOrderStatus = async (req, res) => {
   try {
     const { status } = req.body;
@@ -126,11 +114,7 @@ const updateOrderStatus = async (req, res) => {
   }
 };
 
-/**
- * @desc    Get logged-in user's orders
- * @route   GET /api/orders/myorders
- * @access  Private
- */
+
 const getMyOrders = async (req, res) => {
   try {
     const orders = await Order.find({ user: req.user._id }).sort({

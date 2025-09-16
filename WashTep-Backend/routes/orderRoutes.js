@@ -8,13 +8,13 @@ const {
 } = require('../controllers/orderController');
 const { protect, admin } = require('../middleware/authMiddleware');
 
-// Logged-in user gets their own orders
+// Logged-in user 
 router.get('/myorders', protect, getMyOrders);
 
-// Place a new order (must be logged in)
+//  (must be logged in)
 router.post('/', protect, createOrder);
 
-// Admin-only: get all orders
+// Admin-only
 router.get('/', protect, admin, getAllOrders);
 
 // Admin-only: update order status

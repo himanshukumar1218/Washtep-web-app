@@ -6,6 +6,7 @@ dotenv.config();
 const connectDB = require('./config/db');
 const orderRoutes = require('./routes/orderRoutes');
 const userRoutes = require('./routes/userRoutes');
+const chatRoutes = require('./routes/chatRoutes');
 
 connectDB();
 const app = express();
@@ -22,7 +23,7 @@ app.use(cors({
 // API Routes
 app.use('/api/orders', orderRoutes);
 app.use('/api/users', userRoutes);
-
+app.use('/api/chat', chatRoutes);
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server is running on http://localhost:${PORT}`));
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import './ConfirmationPage.css';
 
-// A simple SVG checkmark icon for visual feedback
+// svg bhi lana hai yaad rhe laadle
 const SuccessIcon = () => (
   <svg className="success-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
     <circle className="success-icon__circle" cx="26" cy="26" r="25" fill="none"/>
@@ -11,7 +11,7 @@ const SuccessIcon = () => (
 
 const ConfirmationPage = ({ orderDetails, onGoHome }) => {
   if (!orderDetails) {
-    // Fallback in case the page is accessed directly without order details
+    // security ka bhi 
     return (
       <div className="confirmation-container">
         <h2>Something went wrong.</h2>

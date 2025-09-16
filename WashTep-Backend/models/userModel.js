@@ -8,8 +8,7 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
 });
 
-// This Mongoose "middleware" runs before a user is saved
-// It automatically hashes the password if it's new or has been changed
+
 userSchema.pre('save', async function (next) {
   if (!this.isModified('password')) {
     next();
@@ -18,7 +17,7 @@ userSchema.pre('save', async function (next) {
   this.password = await bcrypt.hash(this.password, salt);
 });
 
-// A helper method to compare the entered password with the hashed password
+
 userSchema.methods.matchPassword = async function (enteredPassword) {
   return await bcrypt.compare(enteredPassword, this.password);
 };

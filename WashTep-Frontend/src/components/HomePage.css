@@ -1,11 +1,23 @@
 .homepage-header {
   text-align: center;
   margin-bottom: 3.5rem;
+  /* Add these two lines to control the width and center it */
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .homepage-header h1 {
   font-size: 2.8rem;
   margin-bottom: 0.75rem;
   color: var(--text-color);
+}
+/* Add this to: WashTep-Frontend/src/components/HomePage.css */
+
+.homepage-header img {
+  max-width: 100%;
+  height: auto;
+  display: block; 
+  margin: 0 auto;/* Helps prevent extra space below the image */
 }
 .homepage-header p {
   font-size: 1.15rem;
@@ -82,3 +94,14 @@ html[data-theme='dark'] .service-card-content p {
   color: var(--text-color-secondary);
 }
 
+/* WashTep-Frontend/src/components/HomePage.css */
+
+@media (max-width: 768px) {
+  .service-grid {
+    gap: 1.5rem; /* Smaller gap on mobile */
+  }
+
+  .homepage-header h1 {
+    font-size: 2rem; /* Adjust font size */
+  }
+}

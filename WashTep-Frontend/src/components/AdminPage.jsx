@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { API_BASE } from "../config";
 
 // --- STYLES ---
-// The CSS is now included directly in the component to avoid import errors.
+
 const adminPageStyles = `
   .admin-container {
     padding: 2rem 0;

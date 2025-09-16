@@ -1,34 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { API_BASE } from "../config";
-
-// --- STYLE INJECTION COMPONENT ---
-const MyOrdersStyles = () => {
-  useEffect(() => {
-    const style = document.createElement('style');
-    style.textContent = `
-      .my-orders-container { max-width: 1200px; margin-left: auto; margin-right: auto; padding: 1rem 2rem; }
-      .my-orders-title { font-size: 1.875rem; font-weight: 700; color: var(--text-dark); margin-bottom: 1.5rem; }
-      .orders-list { display: flex; flex-direction: column; gap: 1.5rem; }
-      .order-card { background-color: var(--bg-light); border-radius: 0.5rem; border: 1px solid var(--border-color); box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); padding: 1.5rem; transition: box-shadow 0.3s ease; }
-      .order-card:hover { box-shadow: 0 10px 15px -3px rgba(0,0,0,0.07); }
-      .order-card-header { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 1rem; }
-      @media (min-width: 768px) { .order-card-header { grid-template-columns: repeat(4, 1fr); } }
-      .info-block-label { font-size: 0.75rem; color: #6b7280; text-transform: uppercase; letter-spacing: 0.05em; }
-      .info-block-value { font-weight: 600; color: var(--text-dark); }
-      .order-status-value { font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 9999px; font-size: 0.875rem; display: inline-block; }
-      .status-Scheduled { background-color: #DBEAFE; color: #1E40AF; }
-      .status-Picked-Up, .status-Washing, .status-Out-for-Delivery { background-color: #FEF3C7; color: #92400E; }
-      .status-Delivered { background-color: #D1FAE5; color: #065F46; }
-      .status-Cancelled { background-color: #FEE2E2; color: #991B1B; }
-      .centered-feedback { text-align: center; padding: 3rem; background-color: var(--bg-light); border-radius: 0.5rem; border: 1px solid var(--border-color); }
-      .centered-feedback h3 { font-size: 1.5rem; margin-bottom: 1rem; }
-      .centered-feedback p { color: #6b7280; margin-bottom: 1.5rem; }
-    `;
-    document.head.appendChild(style);
-    return () => document.head.removeChild(style);
-  }, []);
-  return null;
-};
+import "./MyOrders.css"; // ✅ Import external CSS
 
 // --- Helper Components ---
 const StatusIndicator = ({ status }) => {
@@ -107,7 +79,7 @@ const MyOrders = ({ userInfo, navigateTo }) => {
         }
 
         const data = await response.json();
-        setOrders(data.orders || []); // ✅ fixed line
+        setOrders(data.orders || []);
       } catch (err) {
         setError(err.message);
       } finally {
@@ -155,13 +127,10 @@ const MyOrders = ({ userInfo, navigateTo }) => {
   };
 
   return (
-    <>
-      <MyOrdersStyles />
-      <div className="my-orders-container">
-        <h1 className="my-orders-title">My Order History</h1>
-        {renderContent()}
-      </div>
-    </>
+    <div className="my-orders-container">
+      <h1 className="my-orders-title">My Order History</h1>
+      {renderContent()}
+    </div>
   );
 };
 

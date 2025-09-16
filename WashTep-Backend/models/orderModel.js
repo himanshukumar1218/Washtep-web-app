@@ -1,13 +1,13 @@
 const mongoose = require('mongoose');
 
 const orderSchema = new mongoose.Schema({
-  // --- ADD THIS ---
+  
   user: {
     type: mongoose.Schema.Types.ObjectId,
     required: true,
     ref: 'User', // This creates the connection to your User model
   },
-  // --- END ADD ---
+
   serviceName: { type: String, required: true },
   fullName: { type: String, required: true },
   phone: { type: String, required: true },

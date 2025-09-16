@@ -1,3 +1,5 @@
+// for login/signUp
+
 import React, { useState } from 'react';
 import './AuthPage.css';
 import { API_BASE } from "../config";
